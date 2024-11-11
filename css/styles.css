@@ -10,6 +10,10 @@ body {
     background-color: #1e1e1e;
     color: #fff;
     line-height: 1.6;
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/965.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 h2, h3 {
@@ -36,6 +40,7 @@ button {
     margin-top: 10px;
     width: 100%;
     text-align: left;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -50,7 +55,7 @@ button:hover {
 
 .sidebar {
     width: 250px;
-    background-color: #121212;
+    background-color: rgba(18, 18, 18, 0.9);
     padding-top: 20px;
     position: fixed;
     height: 100%;
@@ -58,10 +63,20 @@ button:hover {
     top: 0;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
+    overflow: hidden; /* Hide sidebar items initially */
+    padding-left: 0; /* Reset any left padding */
+}
+
+.sidebar:hover {
+    width: 250px; /* Sidebar shows up fully on hover */
 }
 
 .sidebar nav ul {
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .sidebar nav ul li {
@@ -82,10 +97,26 @@ button:hover {
     background-color: #444;
 }
 
-/* Logo Styling */
+.sidebar nav ul li .submenu {
+    display: none; /* Hidden by default */
+    background-color: #333;
+    padding-left: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 150px;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar nav ul li:hover .submenu {
+    display: block;
+    opacity: 1;
+}
+
 .sidebar nav ul li a img.logo {
     width: 150px;  /* Adjust this size based on your logo */
-    margin-bottom: 20px; /* Space below the logo */
+    margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -114,32 +145,45 @@ button:hover {
 
 /* Main Section */
 main {
-    margin-left: 250px;
+    margin-left: 250px; /* Space for the sidebar */
     padding: 40px;
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: flex-start;
+    gap: 40px; /* Increased gap between the chessboard and the right section */
+    flex-wrap: wrap; /* Allows the layout to wrap on smaller screens */
+}
+
+/* Chessboard Container */
+.chessboard-container {
+    background-color: #222;
+    border: 1px solid #444;
+    width: 70%;  /* Ensures the chessboard fills available space */
+    height: 600px;  /* Proper height */
+    margin-right: 40px; /* Space between chessboard and the right section */
+    padding: 10px; /* Padding around the chessboard */
+    flex-grow: 1;
 }
 
 #myBoard {
-    background-color: #222;
-    border: 1px solid #444;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Ensures chessboard takes up full width of the container */
+    height: 100%; /* Takes up full height */
 }
 
+/* Right Section */
 .right-section {
-    max-width: 350px;
+    max-width: 350px; /* Control max width of the right section */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 20px;
     align-items: flex-start;
+    flex-grow: 1; /* Allows right section to grow and take available space */
 }
 
 .right-section h2 {
     font-size: 24px;
     font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .right-section button {
@@ -147,6 +191,7 @@ main {
     padding: 15px;
     font-size: 18px;
     text-align: left;
+    transition: background-color 0.3s ease;
 }
 
 .right-section button div {
@@ -160,21 +205,18 @@ main {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
+@media (max-width: 1024px) {
     main {
-        margin-left: 0;
         flex-direction: column;
         align-items: center;
+        padding: 20px; /* Add some padding to keep content away from the edges */
     }
 
     .sidebar {
         width: 100%;
-        height: auto;
         position: static;
+        height: auto;
+        margin-bottom: 20px; /* Adds spacing between sidebar and content */
     }
 
     .sidebar nav ul {
@@ -186,8 +228,27 @@ main {
         margin: 0;
     }
 
-    #myBoard {
-        width: 80%;
-        height: auto;
+    /* Chessboard for Smaller Screens */
+    .chessboard-container {
+        width: 90%; /* Makes chessboard take more space on small screens */
+        height: 450px; /* Adjust height for better fit on mobile */
+        margin-right: 0; /* Remove margin on mobile */
+    }
+
+    .right-section {
+        width: 100%;
+        align-items: center; /* Center-align the buttons on small screens */
+    }
+
+    /* Reduce button size on smaller screens */
+    .right-section button {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .chessboard-container {
+        height: 400px; /* Even smaller on very small screens */
     }
 }

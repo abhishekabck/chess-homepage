@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess Arena</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./lib/chessboardjs/css/chessboard-1.0.0.min.css">
     <script src="/lib/chess.js"></script>
 </head>
@@ -27,22 +26,18 @@
                     <li><a href="#awards">Awards</a></li>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#leaderboard">Leaderboard</a></li>
-                    <!-- Spacer to push Sign Up and Login to the bottom -->
                     <li class="spacer"></li>
                     <li><a href="login.html" class="btn">Login</a></li>
-                    <li><a href="signup.html" class="btn">Sign Up</a></li>
+                    <li><a href="sign_up.html" class="btn">Sign Up</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main>
-            <!-- Chessboard -->
-            <div id="myBoard" style="width:40%"></div>
-            <!-- Placeholder for chessboard.js implementation -->
+            <div id="myBoard" class="chessboard-container"></div>
             
-            <!-- Heading and Buttons -->
             <div class="right-section">
-                <h2 style="color: white;">Play, Chess Arena where Every Move Matters</h2>
+                <h2>Play, Chess Arena where Every Move Matters</h2>
                 <button onclick="playOnline()">Play Online
                     <div>Find rivals at your skill level</div>
                 </button>
