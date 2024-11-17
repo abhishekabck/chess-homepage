@@ -4,32 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess 2024 by ashu</title>
+    <title>Chess 2024 by Ashu</title>
+
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-   
-        <script src="/lib/chess.js"></script>
 
+    <!-- Chessboard.js -->
+    <script src="/lib/chess.js"></script>
+
+    <!-- Chessboard.js Styles -->
     <link rel="stylesheet" href="/lib/chessboardjs/css/chessboard-1.0.0.min.css">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="/style_multiplayer.css">
+
+    <!-- Socket.io -->
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
         integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
         crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <p id="total_players">Total Players:0</p>
-    <h1 style="text-align: center;">Chess game</h1>
-    <div id="main-element" class="display-f">
-        <div id="myBoard" style="width: 450px"></div>
-        <div id="buttonsParent" style="display: flex; gap: 20px;">
-            <button data-time="10" class="timer-button">10 Min.</button>
-            <button data-time="15" class="timer-button">15 Min.</button>
-            <button data-time="20" class="timer-button">20 Min.</button>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="bg-dark text-white p-3">
+        <div class="logo mb-4 mt-4">
+            <a href="main.html"><img id="logo" src="/image/chess_logo.png" alt="chess Logo"></a>
         </div>
+        <ul id="side_menu" class="list-unstyled">
+            <li><a href="#playMenu" class="menu text-white">Play</a>
+                <ul id="subMenu1" class="submenu list-unstyled" style="display:none; padding-left: 20px;">
+                    <li><a href="index_AI.html" class="side_menu">Play With Computer</a></li>
+                    <li><a href="index_multiplayer.html" class="side_menu">Play Online</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html" class="menu text-white">Login</a></li>
+            <li><a href="sign_up.html" class="menu text-white">Sign Up</a></li>
+            <!-- Add more items here -->
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <p id="total_players">Total Players: 0</p>
+        <h1 style="text-align: center; color: #ffdf00;">Chess Game 2024</h1>
+
+        <div id="main-element" class="display-f">
+            <div id="myBoard" style="width: 450px;"></div>
+            <div id="buttonsParent" class="display-f flex-col">
+                <button data-time="10" class="timer-button">10 Min.</button>
+                <button data-time="15" class="timer-button">15 Min.</button>
+                <button data-time="20" class="timer-button">20 Min.</button>
+            </div>
+        </div>
+        <p id="waiting_text_p" class="display-none">Waiting for opponent to join...</p>
     </div>
-    <p id="waiting_text_p" class="display-none">Waiting for opponent to join...</p>
+
+    <!-- Chessboard.js Scripts -->
     <script src="/lib/chessboardjs/js/chessboard-1.0.0.min.js"></script>
+    
+    <!-- Custom Multiplayer JS -->
     <script src="/script_multiplayer.js"></script>
 </body>
 

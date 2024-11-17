@@ -1,2 +1,195 @@
-/*! chessboard.js v1.0.0 | (c) 2019 Chris Oakman | MIT License chessboardjs.com/license */
-.clearfix-7da63{clear:both}.board-b72b1{border:2px solid #404040;box-sizing:content-box}.square-55d63{float:left;position:relative;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.white-1e1d7{background-color:#f0d9b5;color:#b58863}.black-3c85d{background-color:#b58863;color:#f0d9b5}.highlight1-32417,.highlight2-9c5d2{box-shadow:inset 0 0 3px 3px #ff0}.notation-322f9{cursor:default;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;position:absolute}.alpha-d2270{bottom:1px;right:3px}.numeric-fc462{top:2px;left:2px}
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://4kwallpapers.com/images/walls/thumbs_3t/965.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #2f2f2f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px; /* Added padding for top spacing */
+    padding-left: 20px; /* Optional: Add padding left for better alignment */
+}
+
+/* Logo Styles */
+#logo {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+/* Sidebar Menu Styles */
+#side_menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    margin-bottom: 10px;  /* Added margin for spacing between items */
+    border-radius: 5px;   /* Rounded corners for better UI */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: white;
+}
+
+.menu:hover {
+    background-color: #444;
+    transform: scale(1.05);  /* Slight scaling effect on hover */
+}
+
+.submenu li a {
+    padding-left: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 5px;  /* Added margin for spacing between submenu items */
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+#side_menu li {
+    margin-bottom: 20px;  /* Added space between the list items */
+}
+
+/* Play Button Styles */
+#playBtn {
+    position: relative;
+}
+
+.submenu {
+    display: none;  /* Initially hidden submenu */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3e3e3e;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.submenu li {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+/* Button Styles for Login/Sign Up */
+.menu.login, .menu.signup {
+    background-color: #28a745; /* Green button for Login */
+}
+
+.menu.login:hover, .menu.signup:hover {
+    background-color: #218838;  /* Darker green on hover */
+}
+
+/* Chessboard Container */
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 270px;  /* Offset sidebar width */
+}
+
+/* Chessboard Styles */
+#myBoard {
+    margin-top: 40px;
+    width: 600px;
+    height: 600px;
+    border: 4px solid #dcdcdc;  /* Bold and light-colored border */
+}
+
+/* Control Buttons (Start/Reset) */
+.controls button {
+    margin: 10px;
+    width: 200px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+    background-color: #555;
+    color: white;
+    transform: scale(1.05);  /* Slight scaling effect */
+}
+
+.controls button:focus {
+    outline: none;
+}
+
+/* Chessboard Specific Styling */
+.board-b72b1 {
+    border: 2px solid #404040;
+    box-sizing: content-box;
+}
+
+.square-55d63 {
+    float: left;
+    position: relative;
+    user-select: none;
+}
+
+.white-1e1d7 {
+    background-color: #f0d9b5;
+    color: #b58863;
+}
+
+.black-3c85d {
+    background-color: #b58863;
+    color: #f0d9b5;
+}
+
+.highlight1-32417, .highlight2-9c5d2 {
+    box-shadow: inset 0 0 3px 3px #ff0;
+}
+
+.notation-322f9 {
+    cursor: default;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    position: absolute;
+}
+
+.alpha-d2270 {
+    bottom: 1px;
+    right: 3px;
+}
+
+.numeric-fc462 {
+    top: 2px;
+    left: 2px;
+}
+
+/* Additional Styling for Footer, if needed (optional) */
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
