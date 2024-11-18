@@ -1,0 +1,177 @@
+/* General Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #2d2d2d;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar img {
+    height: 40px;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin: 0 10px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+  /* Profile Section */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.player-info {
+    text-align: center;
+}
+
+.player-info img.avatar {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.player-info .player-name {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.win-loss {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Awards Section */
+.awards {
+    margin-top: 40px;
+}
+
+.awards h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.award {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+/* Burned effect on award icons */
+.award-icon {
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular icons */
+    background-image: url('your-award-icon.jpg'); /* Replace with your award icon image */
+    background-size: contain; /* Ensure the icon is contained */
+    background-position: center; /* Keep the icon centered */
+    background-repeat: no-repeat; /* Don't repeat the icon */
+    
+    /* Add a burned overlay effect */
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.4), /* Dark overlay for burned effect */
+        rgba(0, 0, 0, 0.4) /* Adjust opacity for more subtle or intense effect */
+      ),
+      url('your-award-icon.jpg'); /* Your award icon image */
+    background-size: contain; /* Keep the image contained */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: inline-block; /* Make sure the icon is inline with text or other elements */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional: add subtle shadow to give depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect on hover */
+}
+
+  /* Hover effect for the icon */
+.award-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+  
+  
+  .award h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Stats Section */
+  .stats {
+    margin-top: 40px;
+  }
+  
+  .stats .stat {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Milestones Section */
+  .milestones {
+    margin-top: 40px;
+  }
+  
+  .milestones h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .milestone {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
