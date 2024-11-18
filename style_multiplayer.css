@@ -8,6 +8,7 @@ body {
     padding: 0;
     display: flex;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Sidebar Styles */
@@ -21,7 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 30px; /* Added padding for top spacing */
+    padding-top: 30px;
     padding-left: 20px;
     z-index: 10;
 }
@@ -128,6 +129,7 @@ body {
     font-size: 18px;
 }
 
+/* Waiting for Player Styles */
 #waiting_text_p {
     width: 90vw;
     margin-left: auto;
@@ -135,16 +137,67 @@ body {
     margin-top: 30vh;
     text-align: center;
     font-size: 40px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 1s forwards;
 }
 
 .display-none {
     display: none;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#youArePlayingAs {
+    animation: slideIn 1s ease-out;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Timer Styles */
+#timerDisplay {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffdf00;
+    animation: countdown 1s linear infinite;
+}
+
+@keyframes countdown {
+    0% {
+        color: #ffdf00;
+    }
+    50% {
+        color: #ff0000;
+    }
+    100% {
+        color: #ffdf00;
+    }
+}
+
 /* Heading Styles */
 h1 {
-    color: #ffdf00;  /* Gold color for the title */
+    color: #ffdf00;
     font-size: 3rem;
     text-align: center;
     margin-top: 20px;
+    animation: fadeInUp 2s ease-in-out;
 }

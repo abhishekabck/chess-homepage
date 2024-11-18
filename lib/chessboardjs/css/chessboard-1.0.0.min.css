@@ -4,8 +4,8 @@ body {
     margin: 0;
     padding: 0;
     background: url('https://4kwallpapers.com/images/walls/thumbs_3t/965.jpg') no-repeat center center/cover;
+    display: fixed;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 30px; /* Added padding for top spacing */
+    padding-top: 20px; /* Added padding for top spacing */
     padding-left: 20px; /* Optional: Add padding left for better alignment */
 }
 
@@ -35,6 +35,7 @@ body {
 #side_menu {
     list-style: none;
     padding-left: 0;
+    overflow-y: auto;
 }
 
 .menu {
